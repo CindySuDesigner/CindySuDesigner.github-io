@@ -33,8 +33,24 @@ for(let i=0; i<filterButtons.length; i++){
 
 //header fixed
 
-window.onscroll=function(){
+window.addEventListener('scroll', () => {
 	const docScrollTop=document.documentElement.scrollTop;
+
+	const homeRect = document.getElementById('home').getBoundingClientRect();
+	const aboutRect = document.getElementById('about').getBoundingClientRect();
+	const portfolioRect = document.getElementById('portfolio').getBoundingClientRect();
+	const contactRect = document.getElementById('contact').getBoundingClientRect();
+	const homeNav = document.getElementById("homeNav")
+	const aboutNav = document.getElementById("aboutNav")
+	const portfolioNav = document.getElementById("portfolioNav")
+	const contactNav = document.getElementById("contactNav")
+
+	const navbarRefs = [
+		[homeRect, homeNav],
+		[aboutRect, aboutNav],
+		[portfolioRect, portfolioNav],
+		[contactRect, contactNav],
+	];
 
 	if(window.innerWidth>991){
 		if(docScrollTop>100){
@@ -44,7 +60,21 @@ window.onscroll=function(){
 			document.querySelector("header").classList.remove("fixed")
 		}
 	}
-}
+
+	let previousActive = null;
+	for (const [rect, nav] of navbarRefs) {
+		if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+			nav.classList.add('active');
+			if (previousActive) {
+				previousActive.classList.remove('active');
+			}
+			previousActive = nav;
+		} else {
+			nav.classList.remove('active');
+		}
+	}
+	
+});
 
 
 // navbar links

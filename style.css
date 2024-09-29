@@ -156,8 +156,8 @@ header .navbar ul li a::before{
     width: 0%;
     position: absolute;
     right: 0px;
-    bottom:-2px; /*puts underline flush against bottom line*/
-    transition: all .5s ease;
+    bottom:-2px; /*puts underline flush against bottom line */
+    transition: all .2s ease;
 }
 
 header.fixed .navbar ul li a::before{
