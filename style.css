@@ -149,7 +149,7 @@ header.fixed .navbar ul li a{
     color: #000000;
 }
 
-/*header .navbar ul li a::before{
+header .navbar ul li a::before{
     content: '';
     height: 3px;
     background-color: #ffffff;
@@ -157,8 +157,8 @@ header.fixed .navbar ul li a{
     position: absolute;
     right: 0px;
     bottom:-2px; /*puts underline flush against bottom line*/
-   /* transition: all .5s ease;
-}*/
+    transition: all .5s ease;
+}
 
 header.fixed .navbar ul li a::before{
     background-color: #3fe0d0;
@@ -378,7 +378,7 @@ text-transform: uppercase;
     max-width: 100%;   
 
 }
-/*
+
 .portfolio .portfolio-gallery .item .overlay{
     position: absolute;
     left: 0;
@@ -422,7 +422,7 @@ text-transform: uppercase;
         transform: translateY(0);opacity: 1;
     }
 }
-*/
+
 
 /*CONTACT SECTION*/
 
